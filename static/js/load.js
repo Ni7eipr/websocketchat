@@ -63,7 +63,8 @@ function doSend()
         var msg = {"msg": input.value};
         ws.send(JSON.stringify(msg));
         writeToScreen(input.value);
-        input.value = "";
+        $("#input").val("");
+        $("div.emojionearea-editor").text("");
     }
 }
 
@@ -81,3 +82,7 @@ function doDisconnect() {
     ws.close();
     statusDown();
 }
+
+$(document).ready(function() {
+    $("#input").emojioneArea();
+});

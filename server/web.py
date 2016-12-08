@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # coding: utf-8
-# author:End1ng
+
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 from optparse import OptionParser
 import json
@@ -34,6 +34,7 @@ class SimpleChat(WebSocket):
 
     def handleClose(self):
         print (self.address, 'closed')
+        clients[self] = ""
         for client in clients:
             if client != self:
                 self.sentMsg(client, "system: " + clients[self] + ' - disconnected')
