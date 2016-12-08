@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # coding: utf-8
-
+# author:End1ng
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 from optparse import OptionParser
 import json
